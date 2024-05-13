@@ -14,4 +14,3 @@ target
 *.DS_Store
 _site
 .vscode
-distribution/src/rpm/
