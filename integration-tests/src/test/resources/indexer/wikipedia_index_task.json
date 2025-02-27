@@ -2,7 +2,28 @@
     "type": "index",
     "spec": {
         "dataSchema": {
-            "dataSource": "wikipedia_index_test",
+            "dataSource": "%%DATASOURCE%%",
+            "timestampSpec": {
+                "column": "timestamp",
+                "format": "auto"
+            },
+            "dimensionsSpec": {
+                "dimensions": [
+                    "page",
+                    {"type": "string", "name": "language", "createBitmapIndex": false},
+                    "tags",
+                    "user",
+                    "unpatrolled",
+                    "newPage",
+                    "robot",
+                    "anonymous",
+                    "namespace",
+                    "continent",
+                    "country",
+                    "region",
+                    "city"
+                ]
+            },
             "metricsSpec": [
                 {
                     "type": "count",
@@ -22,38 +43,48 @@
                     "type": "doubleSum",
                     "name": "delta",
                     "fieldName": "delta"
+                },
+                {
+                    "name": "thetaSketch",
+                    "type": "thetaSketch",
+                    "fieldName": "user"
+                },
+                {
+                    "name": "quantilesDoublesSketch",
+                    "type": "quantilesDoublesSketch",
+                    "fieldName": "delta"
+                },
+                {
+                    "name": "HLLSketchBuild",
+                    "type": "HLLSketchBuild",
+                    "fieldName": "user"
                 }
             ],
             "granularitySpec": {
                 "segmentGranularity": "DAY",
                 "queryGranularity": "second",
-                "intervals" : [ "2013-08-31/2013-09-01" ]
-            },
-            "parser": {
-                "parseSpec": {
-                    "format" : "json",
-                    "timestampSpec": {
-                        "column": "timestamp"
-                    },
-                    "dimensionsSpec": {
-                        "dimensions": [
-                            "page", "language", "user", "unpatrolled", "newPage", "robot", "anonymous",
-                            "namespace", "continent", "country", "region", "city"
-                        ]
-                    }
-                }
+                "intervals" : [ "2013-08-31/2013-09-02" ]
             }
         },
         "ioConfig": {
             "type": "index",
-            "firehose": {
+            "inputSource": {
                 "type": "local",
-                "baseDir": "/resources/indexer",
-                "filter": "wikipedia_index_data.json"
-            }
+                "files": [
+                    "/resources/data/batch_index/json/wikipedia_index_data1.json",
+                    "/resources/data/batch_index/json/wikipedia_index_data2.json",
+                    "/resources/data/batch_index/json/wikipedia_index_data3.json"
+                ]
+            },
+            "inputFormat": {
+                "type": "json"
+            },
+            "appendToExisting": false
         },
         "tuningConfig": {
-            "type": "index"
+            "type": "index",
+            "maxRowsPerSegment": 3,
+            "awaitSegmentAvailabilityTimeoutMillis": %%SEGMENT_AVAIL_TIMEOUT_MILLIS%%
         }
     }
 }

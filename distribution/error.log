@@ -1,0 +1,198 @@
+[INFO] Error stacktraces are turned on.
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< org.apache.druid:distribution >--------------------
+[INFO] Building distribution 31.0.1
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ distribution ---
+[INFO] Deleting /home/malvads/duird/druid-druid-31.0.1/distribution/target
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (validate) @ distribution ---
+[INFO] Starting audit...
+Audit done.
+[INFO] 
+[INFO] >>> maven-pmd-plugin:3.16.0:check (validate) > :pmd @ distribution >>>
+[INFO] 
+[INFO] --- maven-pmd-plugin:3.16.0:pmd (pmd) @ distribution ---
+[INFO] 
+[INFO] <<< maven-pmd-plugin:3.16.0:check (validate) < :pmd @ distribution <<<
+[INFO] 
+[INFO] 
+[INFO] --- maven-pmd-plugin:3.16.0:check (validate) @ distribution ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0:enforce (enforce-maven-version) @ distribution ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0:enforce (enforce-java-version) @ distribution ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0:enforce (default-cli) @ distribution ---
+[INFO] 
+[INFO] --- git-commit-id-plugin:4.9.10:revision (default) @ distribution ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (prepare-agent) @ distribution ---
+[INFO] jacocoArgLine set to -javaagent:/home/malvads/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/malvads/duird/druid-druid-31.0.1/distribution/target/jacoco.exec,excludes=org/apache/druid/cli/Cli*:org/apache/druid/cli/GuiceRunnable.class:org/apache/druid/cli/*JettyServerInitializer*:org/apache/druid/server/initialization/*Module*:org/apache/druid/server/initialization/jetty/*Module*:org/apache/druid/guice/http/*:org/apache/druid/cli/UpdateTables*:org/apache/druid/math/expr/antlr/Expr*:org/apache/druid/**/generated/*Benchmark*:org/apache/druid/data/input/influx/InfluxLineProtocol*:org/apache/druid/benchmark/**/*:org/apache/druid/**/*Benchmark*:org/apache/druid/testing/**/*:org/apache/druid/server/coordination/ServerManagerForQueryErrorTest.class:org/apache/druid/guice/SleepModule.class:org/apache/druid/guice/CustomNodeRoleClientModule.class:org/apache/druid/cli/CustomNodeRoleCommandCreator.class:org/apache/druid/cli/QueryRetryTestCommandCreator.class:org/apache/druid/query/TruncatedResponseContextException.class:org/apache/druid/common/aws/AWSCredentials*:com/fasterxml/jackson/databind/*
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ distribution ---
+[INFO] Preparing remote bundle org.apache.apache.resources:apache-jar-resource-bundle:1.5
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- forbiddenapis:3.2:check (compile) @ distribution ---
+[INFO] Skipping execution for packaging "pom"
+[INFO] 
+[INFO] --- forbiddenapis:3.2:testCheck (testCompile) @ distribution ---
+[INFO] Skipping execution for packaging "pom"
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.23:check (check-java-api) @ distribution ---
+[INFO] Checking unresolved references to org.codehaus.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- maven-antrun-plugin:3.0.0:run (default) @ distribution ---
+[INFO] Executing tasks
+[INFO] Executed tasks
+[INFO] 
+[INFO] --- maven-site-plugin:3.11.0:attach-descriptor (attach-descriptor) @ distribution ---
+[INFO] No site descriptor found: nothing to attach.
+[INFO] 
+[INFO] --- cyclonedx-maven-plugin:2.7.9:makeBom (default) @ distribution ---
+[INFO] CycloneDX: Resolving Dependencies
+[INFO] CycloneDX: Creating BOM version 1.4 with 216 component(s)
+[INFO] CycloneDX: Writing and validating BOM (XML): /home/malvads/duird/druid-druid-31.0.1/distribution/target/bom.xml
+[INFO]            attaching as distribution-31.0.1-cyclonedx.xml
+[INFO] CycloneDX: Writing and validating BOM (JSON): /home/malvads/duird/druid-druid-31.0.1/distribution/target/bom.json
+[WARNING] Unknown keyword additionalItems - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword
+[INFO]            attaching as distribution-31.0.1-cyclonedx.json
+[INFO] 
+[INFO] --- rpm-maven-plugin:2.1.5:rpm (generate-rpm) @ distribution ---
+[INFO] Creating directory /home/malvads/duird/druid-druid-31.0.1/distribution/target/rpm/druid
+[INFO] Creating directory /home/malvads/duird/druid-druid-31.0.1/distribution/target/rpm/druid/BUILD
+[INFO] Creating directory /home/malvads/duird/druid-druid-31.0.1/distribution/target/rpm/druid/RPMS
+[INFO] Creating directory /home/malvads/duird/druid-druid-31.0.1/distribution/target/rpm/druid/SOURCES
+[INFO] Creating directory /home/malvads/duird/druid-druid-31.0.1/distribution/target/rpm/druid/SPECS
+[INFO] Creating directory /home/malvads/duird/druid-druid-31.0.1/distribution/target/rpm/druid/SRPMS
+[INFO] Creating directory /home/malvads/duird/druid-druid-31.0.1/distribution/target/rpm/druid/tmp-buildroot
+[INFO] Creating directory /home/malvads/duird/druid-druid-31.0.1/distribution/target/rpm/druid/buildroot
+[INFO] Copying files to /home/malvads/duird/druid-druid-31.0.1/distribution/target/rpm/druid/tmp-buildroot/usr/lib/druid
+[INFO] Creating spec file /home/malvads/duird/druid-druid-31.0.1/distribution/target/rpm/druid/SPECS/druid.spec
+[INFO] Building target platforms: noarch-redhat-linux
+[INFO] Building for target noarch-redhat-linux
+[INFO] Executing(%install): /bin/sh -e /var/tmp/rpm-tmp.U5RZ2d
+[INFO] + umask 022
+[INFO] + cd /home/malvads/duird/druid-druid-31.0.1/distribution/target/rpm/druid/BUILD
+[INFO] + '[' /home/malvads/duird/druid-druid-31.0.1/distribution/target/rpm/druid/buildroot '!=' / ']'
+[INFO] + rm -rf /home/malvads/duird/druid-druid-31.0.1/distribution/target/rpm/druid/buildroot
+[INFO] ++ dirname /home/malvads/duird/druid-druid-31.0.1/distribution/target/rpm/druid/buildroot
+[INFO] + mkdir -p /home/malvads/duird/druid-druid-31.0.1/distribution/target/rpm/druid
+[INFO] + mkdir /home/malvads/duird/druid-druid-31.0.1/distribution/target/rpm/druid/buildroot
+[INFO] + '[' -d /home/malvads/duird/druid-druid-31.0.1/distribution/target/rpm/druid/buildroot ']'
+[INFO] + mv /home/malvads/duird/druid-druid-31.0.1/distribution/target/rpm/druid/tmp-buildroot/usr /home/malvads/duird/druid-druid-31.0.1/distribution/target/rpm/druid/buildroot
+[INFO] + /usr/lib/rpm/check-buildroot
+[INFO] + /usr/lib/rpm/redhat/brp-ldconfig
+[INFO] + /usr/lib/rpm/brp-compress
+[INFO] + /usr/lib/rpm/brp-strip /usr/bin/strip
+[INFO] + /usr/lib/rpm/brp-strip-comment-note /usr/bin/strip /usr/bin/objdump
+[INFO] + /usr/lib/rpm/redhat/brp-strip-lto /usr/bin/strip
+[INFO] + /usr/lib/rpm/brp-strip-static-archive /usr/bin/strip
+[INFO] + /usr/lib/rpm/redhat/brp-python-bytecompile '' 1 0
+[INFO] + /usr/lib/rpm/brp-python-hardlink
+[INFO] + /usr/lib/rpm/redhat/brp-mangle-shebangs
+[INFO] *** ERROR: ambiguous python shebang in /usr/lib/druid/quickstart/protobuf/pb_publisher.py: #!/usr/bin/env python. Change it to python3 (or python2) explicitly.
+[INFO] mangling shebang in /usr/lib/druid/bin/broker.sh from /bin/bash -eu to #!/usr/bin/bash -eu
+[INFO] mangling shebang in /usr/lib/druid/bin/coordinator.sh from /bin/bash -eu to #!/usr/bin/bash -eu
+[INFO] mangling shebang in /usr/lib/druid/bin/dsql from /bin/bash -eu to #!/usr/bin/bash -eu
+[INFO] *** ERROR: ambiguous python shebang in /usr/lib/druid/bin/dsql-main-py2: #!/usr/bin/env python. Change it to python3 (or python2) explicitly.
+[INFO] *** ERROR: ambiguous python shebang in /usr/lib/druid/bin/dsql-main-py3: #!/usr/bin/env python. Change it to python3 (or python2) explicitly.
+[INFO] mangling shebang in /usr/lib/druid/bin/generate-example-metrics from /usr/bin/env python3 to #!/usr/bin/python3
+[INFO] mangling shebang in /usr/lib/druid/bin/greet from /usr/bin/env perl to #!/usr/bin/perl
+[INFO] mangling shebang in /usr/lib/druid/bin/historical.sh from /bin/bash -eu to #!/usr/bin/bash -eu
+[INFO] mangling shebang in /usr/lib/druid/bin/java-util from /bin/bash to #!/usr/bin/bash
+[INFO] mangling shebang in /usr/lib/druid/bin/jconsole.sh from /bin/bash to #!/usr/bin/bash
+[INFO] mangling shebang in /usr/lib/druid/bin/middleManager.sh from /bin/bash -eu to #!/usr/bin/bash -eu
+[INFO] mangling shebang in /usr/lib/druid/bin/node.sh from /bin/bash -eu to #!/usr/bin/bash -eu
+[INFO] mangling shebang in /usr/lib/druid/bin/overlord.sh from /bin/bash -eu to #!/usr/bin/bash -eu
+[INFO] mangling shebang in /usr/lib/druid/bin/post-index-task from /bin/bash -eu to #!/usr/bin/bash -eu
+[INFO] *** ERROR: ambiguous python shebang in /usr/lib/druid/bin/post-index-task-main: #!/usr/bin/env python. Change it to python3 (or python2) explicitly.
+[INFO] *** ERROR: ambiguous python shebang in /usr/lib/druid/bin/post-index-task-main3: #!/usr/bin/env python. Change it to python3 (or python2) explicitly.
+[INFO] mangling shebang in /usr/lib/druid/bin/router.sh from /bin/bash -eu to #!/usr/bin/bash -eu
+[INFO] mangling shebang in /usr/lib/druid/bin/run-druid from /bin/bash -eu to #!/usr/bin/bash -eu
+[INFO] mangling shebang in /usr/lib/druid/bin/run-java from /bin/bash -eu to #!/usr/bin/bash -eu
+[INFO] mangling shebang in /usr/lib/druid/bin/run-zk from /bin/bash -eu to #!/usr/bin/bash -eu
+[INFO] mangling shebang in /usr/lib/druid/bin/service from /usr/bin/env perl to #!/usr/bin/perl
+[INFO] mangling shebang in /usr/lib/druid/bin/start-cluster-data-server from /bin/bash -eu to #!/usr/bin/bash -eu
+[INFO] mangling shebang in /usr/lib/druid/bin/start-cluster-master-no-zk-server from /bin/bash -eu to #!/usr/bin/bash -eu
+[INFO] mangling shebang in /usr/lib/druid/bin/start-cluster-master-with-zk-server from /bin/bash -eu to #!/usr/bin/bash -eu
+[INFO] mangling shebang in /usr/lib/druid/bin/start-cluster-query-server from /bin/bash -eu to #!/usr/bin/bash -eu
+[INFO] mangling shebang in /usr/lib/druid/bin/start-druid from /bin/bash -eu to #!/usr/bin/bash -eu
+[INFO] *** WARNING: ./usr/lib/druid/bin/start-druid-main.py is executable but has no shebang, removing executable bit
+[INFO] mangling shebang in /usr/lib/druid/bin/start-micro-quickstart from /bin/bash -eu to #!/usr/bin/bash -eu
+[INFO] mangling shebang in /usr/lib/druid/bin/start-nano-quickstart from /bin/bash -eu to #!/usr/bin/bash -eu
+[INFO] mangling shebang in /usr/lib/druid/bin/start-single-server-large from /bin/bash -eu to #!/usr/bin/bash -eu
+[INFO] mangling shebang in /usr/lib/druid/bin/start-single-server-medium from /bin/bash -eu to #!/usr/bin/bash -eu
+[INFO] mangling shebang in /usr/lib/druid/bin/start-single-server-small from /bin/bash -eu to #!/usr/bin/bash -eu
+[INFO] mangling shebang in /usr/lib/druid/bin/start-single-server-xlarge from /bin/bash -eu to #!/usr/bin/bash -eu
+[INFO] mangling shebang in /usr/lib/druid/bin/supervise from /usr/bin/env perl to #!/usr/bin/perl
+[INFO] mangling shebang in /usr/lib/druid/bin/verify-default-ports from /usr/bin/env perl to #!/usr/bin/perl
+[INFO] mangling shebang in /usr/lib/druid/bin/verify-java from /usr/bin/env perl to #!/usr/bin/perl
+[INFO] *** WARNING: ./usr/lib/druid/licenses/bin/@types-dom4.MIT is executable but has no shebang, removing executable bit
+[INFO] error: Bad exit status from /var/tmp/rpm-tmp.U5RZ2d (%install)
+[INFO] 
+[INFO] 
+[INFO]     Bad exit status from /var/tmp/rpm-tmp.U5RZ2d (%install)
+[INFO] RPM build errors:
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  8.297 s
+[INFO] Finished at: 2025-02-11T13:05:48Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.codehaus.mojo:rpm-maven-plugin:2.1.5:rpm (generate-rpm) on project distribution: RPM build execution returned: '1' executing '/bin/sh -c cd '/home/malvads/duird/druid-druid-31.0.1/distribution/target/rpm/druid/SPECS' && 'rpmbuild' '-bb' '--target' 'noarch-redhat-linux' '--buildroot' '/home/malvads/duird/druid-druid-31.0.1/distribution/target/rpm/druid/buildroot' '--define' '_topdir /home/malvads/duird/druid-druid-31.0.1/distribution/target/rpm/druid' '--define' '_build_name_fmt %%{ARCH}/%%{NAME}-%%{VERSION}-%%{RELEASE}.%%{ARCH}.rpm' '--define' '_builddir %{_topdir}/BUILD' '--define' '_rpmdir %{_topdir}/RPMS' '--define' '_sourcedir %{_topdir}/SOURCES' '--define' '_specdir %{_topdir}/SPECS' '--define' '_srcrpmdir %{_topdir}/SRPMS' 'druid.spec'' -> [Help 1]
+org.apache.maven.lifecycle.LifecycleExecutionException: Failed to execute goal org.codehaus.mojo:rpm-maven-plugin:2.1.5:rpm (generate-rpm) on project distribution: RPM build execution returned: '1' executing '/bin/sh -c cd '/home/malvads/duird/druid-druid-31.0.1/distribution/target/rpm/druid/SPECS' && 'rpmbuild' '-bb' '--target' 'noarch-redhat-linux' '--buildroot' '/home/malvads/duird/druid-druid-31.0.1/distribution/target/rpm/druid/buildroot' '--define' '_topdir /home/malvads/duird/druid-druid-31.0.1/distribution/target/rpm/druid' '--define' '_build_name_fmt %%{ARCH}/%%{NAME}-%%{VERSION}-%%{RELEASE}.%%{ARCH}.rpm' '--define' '_builddir %{_topdir}/BUILD' '--define' '_rpmdir %{_topdir}/RPMS' '--define' '_sourcedir %{_topdir}/SOURCES' '--define' '_specdir %{_topdir}/SPECS' '--define' '_srcrpmdir %{_topdir}/SRPMS' 'druid.spec''
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:215)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:156)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:148)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:117)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:81)
+    at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build (SingleThreadedBuilder.java:56)
+    at org.apache.maven.lifecycle.internal.LifecycleStarter.execute (LifecycleStarter.java:128)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:305)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:192)
+    at org.apache.maven.DefaultMaven.execute (DefaultMaven.java:105)
+    at org.apache.maven.cli.MavenCli.execute (MavenCli.java:957)
+    at org.apache.maven.cli.MavenCli.doMain (MavenCli.java:289)
+    at org.apache.maven.cli.MavenCli.main (MavenCli.java:193)
+    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
+    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
+    at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:566)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced (Launcher.java:282)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launch (Launcher.java:225)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode (Launcher.java:406)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.main (Launcher.java:347)
+Caused by: org.apache.maven.plugin.MojoExecutionException: RPM build execution returned: '1' executing '/bin/sh -c cd '/home/malvads/duird/druid-druid-31.0.1/distribution/target/rpm/druid/SPECS' && 'rpmbuild' '-bb' '--target' 'noarch-redhat-linux' '--buildroot' '/home/malvads/duird/druid-druid-31.0.1/distribution/target/rpm/druid/buildroot' '--define' '_topdir /home/malvads/duird/druid-druid-31.0.1/distribution/target/rpm/druid' '--define' '_build_name_fmt %%{ARCH}/%%{NAME}-%%{VERSION}-%%{RELEASE}.%%{ARCH}.rpm' '--define' '_builddir %{_topdir}/BUILD' '--define' '_rpmdir %{_topdir}/RPMS' '--define' '_sourcedir %{_topdir}/SOURCES' '--define' '_specdir %{_topdir}/SPECS' '--define' '_srcrpmdir %{_topdir}/SRPMS' 'druid.spec''
+    at org.codehaus.mojo.rpm.RPMHelper.buildPackage (RPMHelper.java:169)
+    at org.codehaus.mojo.rpm.AbstractRPMMojo.execute (AbstractRPMMojo.java:713)
+    at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo (DefaultBuildPluginManager.java:137)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:210)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:156)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:148)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:117)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:81)
+    at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build (SingleThreadedBuilder.java:56)
+    at org.apache.maven.lifecycle.internal.LifecycleStarter.execute (LifecycleStarter.java:128)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:305)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:192)
+    at org.apache.maven.DefaultMaven.execute (DefaultMaven.java:105)
+    at org.apache.maven.cli.MavenCli.execute (MavenCli.java:957)
+    at org.apache.maven.cli.MavenCli.doMain (MavenCli.java:289)
+    at org.apache.maven.cli.MavenCli.main (MavenCli.java:193)
+    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
+    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
+    at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:566)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced (Launcher.java:282)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launch (Launcher.java:225)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode (Launcher.java:406)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.main (Launcher.java:347)
+[ERROR] 
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException

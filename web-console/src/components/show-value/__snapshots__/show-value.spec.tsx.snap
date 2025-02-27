@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ShowValue matches snapshot 1`] = `
+<div
+  class="show-value"
+>
+  <div
+    class="top-actions"
+  >
+    <div
+      class="bp5-button-group right-buttons"
+    >
+      <button
+        class="bp5-button bp5-minimal"
+        type="button"
+      >
+        <span
+          class="bp5-button-text"
+        >
+          Download
+        </span>
+      </button>
+    </div>
+  </div>
+  <div
+    class="main-area"
+  >
+    <textarea
+      class="bp5-input bp5-text-area"
+      readonly=""
+    >
+      { hello: 'world' }
+    </textarea>
+  </div>
+</div>
+`;

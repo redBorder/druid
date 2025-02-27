@@ -94,7 +94,8 @@
             "context": {
                 "useCache": "true",
                 "populateCache": "true",
-                "timeout": 60000
+                "timeout": 60000,
+                "useTopNMultiPassPooledQueryGranularity": "true"
             }
         },
         "expectedResults": [
@@ -198,7 +199,8 @@
             "context": {
                 "useCache": "true",
                 "populateCache": "true",
-                "timeout": 60000
+                "timeout": 60000,
+                "useTopNMultiPassPooledQueryGranularity": "true"
             }
         },
         "expectedResults": [
@@ -322,7 +324,8 @@
             "context": {
                 "useCache": "true",
                 "populateCache": "true",
-                "timeout": 60000
+                "timeout": 60000,
+                "useTopNMultiPassPooledQueryGranularity": "true"
             }
         },
         "expectedResults": [
@@ -415,7 +418,7 @@
                 "timestamp": "2013-01-01T00:00:00.000Z",
                 "event": {
                     "has_links": "Yes",
-                    "tweet_length": 3.143742E7,
+                    "tweet_length": 3.1437419E7,
                     "num_tweets": 376237.0
                 }
             },
@@ -424,7 +427,7 @@
                 "timestamp": "2013-01-02T00:00:00.000Z",
                 "event": {
                     "has_links": "No",
-                    "tweet_length": 2.10402688E8,
+                    "tweet_length": 2.10402683E8,
                     "num_tweets": 3375243.0
                 }
             },
@@ -433,7 +436,7 @@
                 "timestamp": "2013-01-02T00:00:00.000Z",
                 "event": {
                     "has_links": "Yes",
-                    "tweet_length": 3.599512E7,
+                    "tweet_length": 3.5995118E7,
                     "num_tweets": 424223.0
                 }
             },
@@ -442,7 +445,7 @@
                 "timestamp": "2013-01-03T00:00:00.000Z",
                 "event": {
                     "has_links": "No",
-                    "tweet_length": 1.96451456E8,
+                    "tweet_length": 1.9645145E8,
                     "num_tweets": 3144985.0
                 }
             },
@@ -451,7 +454,7 @@
                 "timestamp": "2013-01-03T00:00:00.000Z",
                 "event": {
                     "has_links": "Yes",
-                    "tweet_length": 3.4913568E7,
+                    "tweet_length": 3.4913569E7,
                     "num_tweets": 407434.0
                 }
             }
@@ -528,7 +531,7 @@
                 "timestamp": "2013-01-01T00:00:00.000Z",
                 "event": {
                     "has_links": "No",
-                    "tweet_length": 7.4820448E7,
+                    "tweet_length": 7.4820449E7,
                     "num_tweets": 1170229.0
                 }
             },
@@ -546,7 +549,7 @@
                 "timestamp": "2013-01-02T00:00:00.000Z",
                 "event": {
                     "has_links": "No",
-                    "tweet_length": 2.10402688E8,
+                    "tweet_length": 2.10402683E8,
                     "num_tweets": 3375243.0
                 }
             },
@@ -555,7 +558,7 @@
                 "timestamp": "2013-01-02T00:00:00.000Z",
                 "event": {
                     "has_links": "Yes",
-                    "tweet_length": 3.599512E7,
+                    "tweet_length": 3.5995118E7,
                     "num_tweets": 424223.0
                 }
             },
@@ -564,7 +567,7 @@
                 "timestamp": "2013-01-03T00:00:00.000Z",
                 "event": {
                     "has_links": "No",
-                    "tweet_length": 1.59141088E8,
+                    "tweet_length": 1.59141096E8,
                     "num_tweets": 2567986.0
                 }
             },
@@ -592,66 +595,72 @@
         },
         "expectedResults": [
             {
-                "id": "twitterstream_2013-01-01T00:00:00.000Z_2013-01-02T00:00:00.000Z_2013-01-02T04:13:41.980Z_v9",
-                "intervals": ["2013-01-01T00:00:00.000Z/2013-01-02T00:00:00.000Z"],
-                "columns": {
-                    "has_links": {
-                        "type": "STRING",
-                        "hasMultipleValues": false,
-                        "size": 7773438,
-                        "cardinality": 2,
+                "id":"twitterstream_2013-01-01T00:00:00.000Z_2013-01-02T00:00:00.000Z_2013-01-02T04:13:41.980Z_v9",
+                "intervals":["2013-01-01T00:00:00.000Z/2013-01-02T00:00:00.000Z"],
+                "columns":{
+                    "has_links":{
+                        "typeSignature": "STRING",
+                        "type":"STRING",
+                        "hasMultipleValues":false,
+                        "size":0,
+                        "cardinality":2,
                         "minValue":"No",
                         "maxValue":"Yes",
-                        "errorMessage": null
+                        "errorMessage":null,
+                        "hasNulls":false
                     }
                 },
-                "size": 747056474,
-                "numRows": 3702583,
-                "aggregators": null,
-                "timestampSpec": null,
-                "queryGranularity": null,
+                "size":0,
+                "numRows":3702583,
+                "aggregators":null,
+                "timestampSpec":null,
+                "queryGranularity":null,
                 "rollup":null
             },
             {
-                "id": "twitterstream_2013-01-02T00:00:00.000Z_2013-01-03T00:00:00.000Z_2013-01-03T03:44:58.791Z_v9",
-                "intervals": ["2013-01-02T00:00:00.000Z/2013-01-03T00:00:00.000Z"],
-                "columns": {
-                    "has_links": {
-                        "type": "STRING",
-                        "hasMultipleValues": false,
-                        "size": 7901000,
-                        "cardinality": 2,
+                "id":"twitterstream_2013-01-02T00:00:00.000Z_2013-01-03T00:00:00.000Z_2013-01-03T03:44:58.791Z_v9",
+                "intervals":["2013-01-02T00:00:00.000Z/2013-01-03T00:00:00.000Z"],
+                "columns":{
+                    "has_links":{
+                        "typeSignature": "STRING",
+                        "type":"STRING",
+                        "hasMultipleValues":false,
+                        "size":0,
+                        "cardinality":2,
                         "minValue":"No",
                         "maxValue":"Yes",
-                        "errorMessage": null
+                        "errorMessage":null,
+                        "hasNulls":false
                     }
                 },
-                "size": 755796690,
-                "numRows": 3743002,
-                "aggregators": null,
-                "timestampSpec": null,
-                "queryGranularity": null,
+                "size":0,
+                "numRows":3743002,
+                "aggregators":null,
+                "timestampSpec":null,
+                "queryGranularity":null,
                 "rollup":null
             },
             {
-                "id": "twitterstream_2013-01-03T00:00:00.000Z_2013-01-04T00:00:00.000Z_2013-01-04T04:09:13.590Z_v9",
-                "intervals": ["2013-01-03T00:00:00.000Z/2013-01-04T00:00:00.000Z"],
-                "columns": {
-                    "has_links": {
-                        "type": "STRING",
-                        "hasMultipleValues": false,
-                        "size": 7405654,
-                        "cardinality": 2,
+                "id":"twitterstream_2013-01-03T00:00:00.000Z_2013-01-04T00:00:00.000Z_2013-01-04T04:09:13.590Z_v9",
+                "intervals":["2013-01-03T00:00:00.000Z/2013-01-04T00:00:00.000Z"],
+                "columns":{
+                    "has_links":{
+                        "typeSignature": "STRING",
+                        "type":"STRING",
+                        "hasMultipleValues":false,
+                        "size":0,
+                        "cardinality":2,
                         "minValue":"No",
                         "maxValue":"Yes",
-                        "errorMessage": null
+                        "errorMessage":null,
+                        "hasNulls":false
                     }
                 },
-                "size": 706893542,
+                "size":0,
                 "numRows":3502959,
-                "aggregators": null,
-                "timestampSpec": null,
-                "queryGranularity": null,
+                "aggregators":null,
+                "timestampSpec":null,
+                "queryGranularity":null,
                 "rollup":null
             }
         ]
@@ -735,7 +744,8 @@
             "context": {
                 "useCache": "true",
                 "populateCache": "true",
-                "timeout": 60000
+                "timeout": 60000,
+                "useTopNMultiPassPooledQueryGranularity": "true"
             }
         },
         "expectedResults": [

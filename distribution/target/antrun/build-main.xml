@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="maven-antrun-" default="main">
+  <target name="main">
+    <concat destfile="/home/malvads/duird/druid-druid-31.0.1/distribution/target/../../README.BINARY">
+      <fileset file="/home/malvads/duird/druid-druid-31.0.1/distribution/target/../../README" />
+      <fileset file="/home/malvads/duird/druid-druid-31.0.1/distribution/target/../../LABELS" />
+    </concat>
+  </target>
+</project>
