@@ -146,7 +146,7 @@
                             <sources>
                                 <source>
                                     <location>
-                                    /home/malvads/duird/druid-druid-31.0.1/distribution/apache-druid-31.0.1
+                                    ./apache-druid-31.0.1
                                     </location>
                                 </source>
                             </sources>
